@@ -1,8 +1,8 @@
-# # Ghibli Style Transfer using CycleGAN
+# Ghibli Style Transfer using CycleGAN
 
 This project implements a Cycle Generative Adversarial Network (CycleGAN) to perform artistic style transfer, specifically transforming regular images into the distinctive style of Studio Ghibli animations. The model is trained to learn the mapping between two image domains (e.g., real-world photos and Ghibli-style artwork) without requiring paired examples.
 
-## Table of Contents
+# Table of Contents
 
   - [Features](https://www.google.com/search?q=%23features)
   - [Live Demo](https://www.google.com/search?q=%23live-demo)
@@ -27,12 +27,12 @@ This project implements a Cycle Generative Adversarial Network (CycleGAN) to per
   * **Cycle Consistency Loss**: Incorporates a cycle consistency loss to ensure that the learned mappings are invertible, preserving content across translations.
   * **Streamlit Deployment**: The trained model is deployed as an interactive web application for easy demonstration.
 
-## Live Demo
+# Live Demo
 
 Experience the Ghibli style transfer in action through our Streamlit application:
 [CycleGAN Streamlit App](https://cyclegan-app-6cvc3wgympvy9tskshngmf.streamlit.app/)
 
-## Project Structure
+# Project Structure
 
 The core logic of the project is contained within the `FiNAL_CV_GHIBHLI_STYLE_TRANSFER.ipynb` Jupyter notebook. This notebook covers:
 
@@ -44,7 +44,7 @@ The core logic of the project is contained within the `FiNAL_CV_GHIBHLI_STYLE_TR
   * The training loop, including checkpointing and image sampling.
   * Sections for testing and evaluation of the trained models.
 
-## Model Architecture
+# Model Architecture
 
 The project is based on the **CycleGAN** architecture, which consists of two generative models and two discriminative models.
 
@@ -62,7 +62,7 @@ The project is based on the **CycleGAN** architecture, which consists of two gen
       * Each discriminator tries to distinguish between real images from a domain and fake (generated) images for that domain.
       * The `Discriminator` class implements convolutional layers with `InstanceNorm2d` and `LeakyReLU` activation functions.
 
-## Loss Functions
+# Loss Functions
 
 The training of the CycleGAN model involves several loss components to ensure effective style transfer and content preservation:
 
@@ -70,9 +70,9 @@ The training of the CycleGAN model involves several loss components to ensure ef
   * **Cycle Consistency Loss (`nn.L1Loss`)**: This crucial loss ensures that if an image is translated from one domain to another and then back to the original domain, the reconstructed image should be identical to the original. This helps in preserving the content of the image during style transfer. There are two such losses: `loss_cycle_A` and `loss_cycle_B`.
   * **Identity Loss (`nn.L1Loss`)**: This loss encourages the generator to preserve the color composition of the input image when translating it to the target domain, particularly when the input image already belongs to the target domain. This helps in preventing unnecessary color changes. There are two such losses: `loss_identity_A` and `loss_identity_B`.
 
-## Getting Started
+# Getting Started
 
-### Prerequisites
+## Prerequisites
 
   * Python 3.x
   * PyTorch
@@ -84,18 +84,18 @@ The training of the CycleGAN model involves several loss components to ensure ef
 
 These libraries are installed via `pip` commands in the notebook.
 
-### Installation
+## Installation
 
 1.  **Clone the GitHub repository** (once it's set up).
 2.  **Download the `FiNAL_CV_GHIBHLI_STYLE_TRANSFER.ipynb` notebook** to your local machine or Google Drive.
 3.  **Open the notebook** in a Jupyter environment (e.g., Google Colab).
 
-### Dataset
+## Dataset
 
 The dataset used here is taken from Keggle.link:- (https://www.kaggle.com/datasets/shubham1921/real-to-ghibli-image-dataset-5k-paired-images)
 
 
-### Training
+## Training
 
 The training process involves iterating over epochs and updating the Generator and Discriminator networks.
 
@@ -106,7 +106,7 @@ The training process involves iterating over epochs and updating the Generator a
 
 To start training, run the cells in the "Training Block" section of the notebook.
 
-### Testing and Evaluation
+## Testing and Evaluation
 
 After training, you can test the model on new images:
 
@@ -115,7 +115,7 @@ After training, you can test the model on new images:
 3.  Run the `test_single_image` function or the loop provided in the "FOR TESTING AND EVALUATION" section to translate images and save the outputs.
 4.  The notebook also includes code to visualize original and translated image pairs using `matplotlib`.
 
-## Results
+# Results
 
 
 <img width="776" height="260" alt="10" src="https://github.com/user-attachments/assets/ab665b1d-8d6d-4e76-8e7a-031917acf23f" />
@@ -123,13 +123,13 @@ After training, you can test the model on new images:
 <img width="776" height="260" alt="47" src="https://github.com/user-attachments/assets/83f695cf-df11-4fc2-b753-d8ecf0e54541" />
 
 
-## Resources
+# Resources
 
   * **Official CycleGAN Paper**: [Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks](https://arxiv.org/abs/1703.10593)
   * **Original PyTorch CycleGAN GitHub**: [junyanz/pytorch-CycleGAN-and-pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
   * **Dataset**: [Real to Ghibli Image Dataset](https://www.kaggle.com/datasets/shubham1921/real-to-ghibli-image-dataset-5k-paired-images)
 
-## Contributors
+# Contributors
 
   * Partha Mete
-  * Kanan Pandit (responsible for Streamlit deployment)
+  * Kanan Pandit
